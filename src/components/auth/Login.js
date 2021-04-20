@@ -1,12 +1,25 @@
+import './../../css/login.css';
+
 function Login() {
   return (
-    <div>
-      <h1>Account Login</h1>
+    <div className="form-container">
+      <h1>
+        Account <span>Login</span>
+      </h1>
       <form>
-        <label> Email : </label>
-        <input type="email" placeholder="Email" />
-        <label> Password : </label>
-        <input type="password" placeholder="Password" />
+        <div className="form-group">
+          <label> Email : </label>
+          <input type="email" placeholder="Email" />
+        </div>
+
+        <div className="form-group">
+          <label> Password : </label>
+          <input type="password" placeholder="Password" />
+        </div>
+
+        <div className="form-group">
+          <button type="submit">Login</button>
+        </div>
       </form>
     </div>
   );
