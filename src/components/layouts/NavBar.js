@@ -1,6 +1,9 @@
 import './../../css/navbar.css';
 import Links from './links/Links';
 function NavBar() {
+  const userLinksConnected = ['Home', 'Profile', 'Settings'];
+  const userLinksNotConnected = ['Home', 'Login', 'Register', 'About'];
+
   return (
     <header>
       <nav className="navbar" style={navBarStyle}>
@@ -13,7 +16,12 @@ function NavBar() {
           </h1>
         </div>
         {/*  import Links Componenet */}
-        <Links />
+        <Links
+          connected={userLinksConnected}
+          notConnected={userLinksNotConnected}
+          name={'Youssra'}
+          isOk={true}
+        />
       </nav>
     </header>
   );
