@@ -1,7 +1,12 @@
 import './../../css/navbar.css';
 import Links from './links/Links';
 function NavBar() {
-  const userLinksConnected = ['Home', 'Profile', 'Settings'];
+  const userLinksConnected = [
+    { name: 'About', path: '/about' },
+    { name: 'Home', path: '/' },
+    { name: 'Login', path: '/login' },
+    { name: 'Register', path: '/register' },
+  ];
   const userLinksNotConnected = ['Home', 'Login', 'Register', 'About'];
 
   return (
@@ -18,9 +23,10 @@ function NavBar() {
         {/*  import Links Componenet */}
         <Links
           connected={userLinksConnected}
-          notConnected={userLinksNotConnected}
+          notConnected={undefined}
           name={'Youssra'}
-          isOk={true}
+          isOk={false}
+          n={1234}
         />
       </nav>
     </header>

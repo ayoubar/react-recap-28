@@ -1,13 +1,39 @@
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 function Links(props) {
-  const isConnected = false;
+  const isConnected = true;
   return (
     <ul>
       {isConnected
-        ? props.connected.map((x) => <li> {x}</li>)
-        : props.notConnected.map((x) => <li> {x}</li>)}
+        ? props.connected.map((x, index) => (
+            <li key={index}>
+              {' '}
+              <Link style={linkCss} to={x.path}>
+                {x.name}
+              </Link>
+            </li>
+          ))
+        : props.notConnected.map((x, index) => <li key={index}> {x}</li>)}
     </ul>
   );
 }
+
+const linkCss = {
+  color: '#ffffff',
+  textDecoration: 'none',
+};
+
+Links.propTypes = {
+  connected: PropTypes.array,
+  notConnected: PropTypes.array,
+  name: PropTypes.string,
+  isOk: PropTypes.bool,
+  n: PropTypes.number,
+};
+
+Links.defaultProps = {
+  notConnected: ['Home', 'Login', 'Register', 'Y'],
+};
 
 /*
   array.map()
